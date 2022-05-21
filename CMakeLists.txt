@@ -4,6 +4,8 @@ project(imgui)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_subdirectory(${PROJECT_SOURCE_DIR}/vendor/glfw)
+
 file(GLOB SOURCES
   "${PROJECT_SOURCE_DIR}/src/*.h"
   "${PROJECT_SOURCE_DIR}/src/*.cpp"
@@ -17,6 +19,8 @@ target_compile_options(imgui PUBLIC
   -DGL_SILENCE_DEPRECATION
   -DGLES_SILENCE_DEPRECATION
 )
+
+target_link_libraries(imgui PUBLIC glfw)
 
 target_include_directories(imgui 
   PUBLIC 
