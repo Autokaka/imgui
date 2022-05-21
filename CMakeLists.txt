@@ -13,6 +13,11 @@ file(GLOB SOURCES
 
 add_library(imgui STATIC ${SOURCES})
 
+target_compile_options(imgui PRIVATE
+  -DGL_SILENCE_DEPRECATION
+  -DGLES_SILENCE_DEPRECATION
+)
+
 target_include_directories(imgui 
   PUBLIC 
     ${PROJECT_SOURCE_DIR}/include
