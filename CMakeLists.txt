@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 file(GLOB SOURCES
   "${PROJECT_SOURCE_DIR}/src/*.h"
   "${PROJECT_SOURCE_DIR}/src/*.cpp"
+  "${PROJECT_SOURCE_DIR}/src/**/*.h"
+  "${PROJECT_SOURCE_DIR}/src/**/*.cpp"
 )
 
 add_library(imgui STATIC ${SOURCES})
